@@ -1,0 +1,343 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  color: white;
+  background: radial-gradient(circle, #06b6d4, #9333ea, #ec4899);
+  height: 100vh;
+}
+
+.navbar {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5));
+  transition: background 0.5s ease;
+  padding: 1rem 2rem;
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  color: #fff !important;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.navbar-brand:hover {
+  color: #3498db !important;
+  transform: scale(1.3);
+  transition: transform 0.3s ease-in-out;
+
+}
+
+.navbar-nav .nav-link {
+  color: #fff !important;
+  font-size: 1.1rem;
+  margin-left: 1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #3498db !important;
+  transform: scale(1.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Social Media Icons */
+.social-icons a {
+  color: #fff;
+  margin-left: 15px;
+  font-size: 1.4rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #3498db;
+  transform: scale(1.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Sticky Navbar - Add shadow when scrolling */
+.navbar.sticky-navbar {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+/* Mobile responsiveness for navbar */
+@media (max-width: 767px) {
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 1.2rem;
+  }
+}
+
+
+
+
+/* Glowing text animation */
+.head {
+
+  transition: all 0.3s ease-in-out;
+  margin: 20px;
+  color: white;
+  font-weight: bold;
+  font: 2em;
+
+}
+
+
+
+
+
+
+
+
+/* HERO SECTION */
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: none;
+}
+
+.carousel-item {
+  height: 100vh;
+  /* Full height */
+}
+
+.carousel-item:nth-child(1) {
+  background: url('./images/3.jpg') no-repeat center center / cover;
+}
+
+.carousel-item:nth-child(2) {
+  background: url('./images/2.jpg') no-repeat center center / cover;
+}
+
+.carousel-item:nth-child(3) {
+  background: url('./images/1.jpg') no-repeat center center / cover;
+}
+
+/* Optional: Custom styles for the text inside the carousel */
+.carousel-item .container {
+  position: relative;
+  z-index: 2;
+}
+
+.carousel-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  /* Optional dark overlay for text visibility */
+  z-index: 1;
+}
+
+
+
+
+/* Hero Image Animation */
+@keyframes hero-image-animation {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(2.5);
+  }
+}
+
+/* BUTTON */
+:root {
+  --h: 33;
+  --s: 90%;
+  --l: 90%;
+  font-family: 'Noto Sans', sans-serif;
+
+}
+
+.container a {
+  text-decoration: none;
+  color: white;
+}
+
+.glass-btn {
+  user-select: none;
+  font-size: clamp(1.2rem, 5vw + 1rem, 2.5rem);
+  width: 12em;
+  height: 3em;
+  border-radius: 0.5em;
+  background-image: linear-gradient(#0003, #0000);
+
+  box-shadow:
+    0 -0.125em 0.25em #0002,
+    0 0.25em 0.25em hsl(var(--h) var(--s) var(--l) / 0.5),
+    0 0 0 0.1em hsl(var(--h) var(--s) var(--l) / 0.5),
+    0 0.175em 0.3em hsl(var(--h) var(--s) var(--l) / 0.5) inset,
+    0 -0.025em 0.175em hsl(var(--h) var(--s) var(--l) / 0.4) inset,
+    0 -0.25em 1em 0.3em hsl(var(--h) var(--s) var(--l) / 0.3) inset,
+    0 0.6em 0 hsl(var(--h) var(--s) var(--l) / 0.3) inset,
+    0 2em 1em #0004;
+  backdrop-filter: blur(0.15em);
+  position: relative;
+  display: grid;
+  place-content: center;
+  color: hsl(var(--h) var(--s) var(--l) / .7);
+  text-shadow:
+    0.03em 0.03em #fff5,
+    -0.03em -0.03em #0005;
+  cursor: pointer;
+  transition: 0.1s ease;
+  padding-top: 0.2em;
+  left: 20vw;
+}
+
+.glass-btn:hover {
+  transform: scale(1.1);
+  transition: 1.2s ease;
+}
+
+.glass-btn:before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  width: 80%;
+  left: 10%;
+  height: 1.5em;
+
+  background-image:
+    radial-gradient(100% 100% at center,
+      hsla(var(--h), var(--s), 80%, 0.25),
+      hsla(var(--h), var(--s), 80%, 0) 50%);
+}
+
+.glass-btn:after {
+  content: '';
+  inset: 0;
+  top: 0.5em;
+  position: absolute;
+
+  background-image:
+    linear-gradient(105deg,
+      transparent 20%,
+      hsl(var(--h) var(--s) var(--l) / .2) 20%,
+      hsl(var(--h) var(--s) var(--l) / .2) 30%,
+      transparent 30%,
+      transparent 32%,
+      hsl(var(--h) var(--s) var(--l) / .2) 5%,
+      hsl(var(--h) var(--s) var(--l) / .2) 40%,
+      transparent 0%);
+  background-size: 400% 100%;
+  background-position: 100% 0%;
+  transition: .3s ease;
+}
+
+.glass-btn:active:after {
+  background-position: -50% 0%;
+}
+
+.glass-btn:active {
+  translate: .01em .25em;
+  box-shadow:
+    0 -0.125em 0.25em #0002,
+    0 0.25em 0.25em hsl(var(--h) var(--s) var(--l) / 0.5),
+    0 0 0 0.1em hsl(var(--h) var(--s) var(--l) / 0.5),
+    0 0.175em 0.3em hsl(var(--h) var(--s) var(--l) / 0.8) inset,
+    0 -0.025em 0.175em hsl(var(--h) var(--s) var(--l) / 0.4) inset,
+    0 -0.25em 1em 0.3em hsl(var(--h) var(--s) var(--l) / 0.3) inset,
+    0 0.6em 0 hsl(var(--h) var(--s) var(--l) / 0.3) inset,
+    0 1em 0.5em #0004;
+  backdrop-filter: blur(0.08em);
+}
+
+.glass-btn:active:before {
+  height: 1em;
+}
+
+
+
+
+/* About Section */
+#about img {
+  max-width: 300px;
+  margin-top: 20px;
+  transition: transform 0.5s;
+}
+
+#about img:hover {
+  transform: scale(1.1);
+}
+
+/* Projects sections */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  background-color: black;
+  border: 4px solid transparent;
+  border-image: linear-gradient(45deg, #4caf50, #2196f3);
+  border-image-slice: 1;
+  padding: 15px;
+
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+
+.card img {
+  transition: transform 0.5s ease;
+}
+
+.card img:hover {
+  transform: scale(1.05);
+}
+
+
+.card-text {
+  margin-bottom: 1rem;
+  flex-grow: 1;
+  text-align: justify;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+
+/* Footer */
+footer {
+
+  color: #fff;
+  font-size: 1.1rem;
+  padding: 20px 0;
+}
+
+footer a {
+  color: #3498db;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
