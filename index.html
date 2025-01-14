@@ -6,8 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>M.IHTISHAM Portfolio</title>
-  <!-- Bootstrap 4 CSS -->
+  <!-- Bootstrap 5 CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
@@ -148,7 +149,9 @@
       <h2 class="display-4 animate__animated animate__fadeIn">My Projects</h2>
       <div class="row">
         <!-- Project 1 -->
-        <div class="col-md-4 my-3">
+        <div class="col-md-4 my-3"   data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">>
           <div class="card shadow animate__animated animate__fadeIn animate__delay-1s">
             <img src="./images/Calculator.jpg" class="card-img-top" alt="Project 1" />
             <div class="card-body">
@@ -164,7 +167,10 @@
           </div>
         </div>
         <!-- Project 2 -->
-        <div class="col-md-4 my-3">
+        <div class="col-md-4 my-3"  data-aos="fade-left"
+     data-aos-anchor="#example-anchor"
+     data-aos-offset="500"
+     data-aos-duration="500">>
           <div class="card shadow animate__animated animate__fadeIn animate__delay-1s">
             <img src="./images/data analysis.jpg" class="card-img-top" alt="Project 2" />
             <div class="card-body">
@@ -177,7 +183,10 @@
           </div>
         </div>
         <!-- Project 3 -->
-        <div class="col-md-4 my-3">
+        <div class="col-md-4 my-3" data-aos="fade-zoom-in"
+     data-aos-easing="ease-in-back"
+     data-aos-delay="300"
+     data-aos-offset="0">>
           <div class="card shadow animate__animated animate__fadeIn animate__delay-1s">
             <img src="./images/form.jpg" class="card-img-top" alt="Project 3" />
             <div class="card-body">
@@ -267,6 +276,10 @@
       loader.style.display = "none";
     });
   </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+  AOS.init();
+</script>
 </body>
 
 </html>
