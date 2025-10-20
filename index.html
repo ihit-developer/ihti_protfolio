@@ -16,10 +16,19 @@
 </head>
 
 <body>
-    <!-- Loader -->
-    <div id="loader">
-      <div class="spinner"></div>
-    </div>
+ <!-- 🔹 Loader Section (Paste at very top of <body>) -->
+<div id="loader">
+  <div class="loader">
+    <div class="loader__bar"></div>
+    <div class="loader__bar"></div>
+    <div class="loader__bar"></div>
+    <div class="loader__bar"></div>
+    <div class="loader__bar"></div>
+    <div class="loader__ball"></div>
+  </div>
+  <h1>Loading...</h1>
+</div>
+
   <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top sticky-navbar">
     <a class="navbar-brand" href="#">M.Ihtisham</a>
@@ -151,7 +160,7 @@
         <!-- Project 1 -->
         <div class="col-md-4 my-3"   data-aos="fade-right"
      data-aos-offset="300"
-     data-aos-easing="ease-in-sine">>
+     data-aos-easing="ease-in-sine">
           <div class="card shadow animate__animated animate__fadeIn animate__delay-1s">
             <img src="./images/Calculator.jpg" class="card-img-top" alt="Project 1" />
             <div class="card-body">
@@ -170,7 +179,7 @@
         <div class="col-md-4 my-3"  data-aos="fade-left"
      data-aos-anchor="#example-anchor"
      data-aos-offset="500"
-     data-aos-duration="500">>
+     data-aos-duration="500">
           <div class="card shadow animate__animated animate__fadeIn animate__delay-1s">
             <img src="./images/data analysis.jpg" class="card-img-top" alt="Project 2" />
             <div class="card-body">
@@ -186,7 +195,7 @@
         <div class="col-md-4 my-3" data-aos="fade-zoom-in"
      data-aos-easing="ease-in-back"
      data-aos-delay="300"
-     data-aos-offset="0">>
+     data-aos-offset="0">
           <div class="card shadow animate__animated animate__fadeIn animate__delay-1s">
             <img src="./images/form.jpg" class="card-img-top" alt="Project 3" />
             <div class="card-body">
@@ -202,34 +211,71 @@
     </div>
   </section>
 
-  <!-- Skills Section -->
-  <section id="skills" class="container my-5">
-    <h2 class="text-center display-4 animate__animated animate__fadeIn">
-      My Skills
-    </h2>
-    <div class="row">
-      <div class="col-md-3 text-center">
-        <i class="fas fa-laptop-code fa-3x mb-3"></i>
-        <h4>Web Development</h4>
-        <p>HTML, CSS, JavaScript, React, Node.js</p>
-      </div>
-      <div class="col-md-3 text-center">
-        <i class="fas fa-paint-brush fa-3x mb-3"></i>
-        <h4>UI/UX Design</h4>
-        <p>Figma, Sketch, Adobe XD</p>
-      </div>
-      <div class="col-md-3 text-center">
-        <i class="fas fa-database fa-3x mb-3"></i>
-        <h4>Database</h4>
-        <p>MySQL, MongoDB</p>
-      </div>
-      <div class="col-md-3 text-center">
-        <i class="fas fa-cloud fa-3x mb-3"></i>
-        <h4>Cloud Services</h4>
-        <p>AWS, Firebase</p>
+<!-- Skills Section -->
+<section id="skills" class="container my-5">
+  <h2 class="text-center display-4 animate__animated animate__fadeIn mb-5 text-light">
+    My Skills
+  </h2>
+
+  <div class="row gy-4 gx-4"> <!-- Added gx-4 for horizontal gap -->
+    <!-- Web Development -->
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <div class="skill-box p-4">
+        <h5 class="d-flex justify-content-between align-items-center">
+          <span><i class="fas fa-laptop-code me-2 text-primary"></i> Web Development</span>
+          <span>80%</span>
+        </h5>
+        <div class="progress">
+          <div class="progress-bar bg-primary" style="width: 80%;"></div>
+        </div>
+        <p class="text-light mt-2 mb-0">HTML, CSS, JavaScript, React, Node.js</p>
       </div>
     </div>
-  </section>
+
+    <!-- UI/UX Design -->
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <div class="skill-box p-4">
+        <h5 class="d-flex justify-content-between align-items-center">
+          <span><i class="fas fa-paint-brush me-2 text-info"></i> UI/UX Design</span>
+          <span>60%</span>
+        </h5>
+        <div class="progress">
+          <div class="progress-bar bg-info" style="width: 60%;"></div>
+        </div>
+        <p class="text-light mt-2 mb-0">Figma, Sketch, Adobe XD</p>
+      </div>
+    </div>
+
+    <!-- Database -->
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <div class="skill-box p-4">
+        <h5 class="d-flex justify-content-between align-items-center">
+          <span><i class="fas fa-database me-2 text-success"></i> Database</span>
+          <span>75%</span>
+        </h5>
+        <div class="progress">
+          <div class="progress-bar bg-success" style="width: 75%;"></div>
+        </div>
+        <p class="text-light mt-2 mb-0">MySQL, MongoDB</p>
+      </div>
+    </div>
+
+    <!-- Cloud Services -->
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <div class="skill-box p-4">
+        <h5 class="d-flex justify-content-between align-items-center">
+          <span><i class="fas fa-cloud me-2 text-warning"></i> Cloud Services</span>
+          <span>55%</span>
+        </h5>
+        <div class="progress">
+          <div class="progress-bar bg-warning" style="width: 55%;"></div>
+        </div>
+        <p class="text-light mt-2 mb-0">AWS, Firebase</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
   <!-- Contact Section -->
   <section id="contact">
@@ -275,6 +321,9 @@
       const loader = document.getElementById("loader");
       loader.style.display = "none";
     });
+      window.addEventListener("load", () => {
+    document.body.classList.add("loaded");
+  });
   </script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
