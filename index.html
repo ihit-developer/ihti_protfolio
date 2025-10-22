@@ -16,18 +16,13 @@
 </head>
 
 <body>
- <!-- 🔹 Loader Section (Paste at very top of <body>) -->
+<!-- 🔹 Loader Section -->
 <div id="loader">
-  <div class="loader">
-    <div class="loader__bar"></div>
-    <div class="loader__bar"></div>
-    <div class="loader__bar"></div>
-    <div class="loader__bar"></div>
-    <div class="loader__bar"></div>
-    <div class="loader__ball"></div>
-  </div>
-  <h1>Loading...</h1>
+  <div class="loader"></div>
+  <h3 class="loading-text">Loading...</h3>
 </div>
+
+
 
   <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top sticky-navbar">
@@ -321,9 +316,12 @@
       const loader = document.getElementById("loader");
       loader.style.display = "none";
     });
-      window.addEventListener("load", () => {
-    document.body.classList.add("loaded");
-  });
+  window.addEventListener("load", () => {
+      const loader = document.getElementById("loader");
+      loader.style.opacity = "0";
+      document.body.classList.add("loaded");
+      setTimeout(() => loader.style.display = "none", 500);
+    });
   </script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
