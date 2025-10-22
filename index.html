@@ -124,16 +124,17 @@
     </div>
   </section>
 
+<div class="animated-background"></div>
+
   <!-- About Section -->
-  <section id="about" class="container my-5">
+  <section id="about">
     <div class="row">
       <div class="col-md-6 text-center">
-        <img src="./images/1111.jpg" alt="Developer"
-          class="img-fluid rounded-circle shadow-lg animate__animated animate__fadeIn animate__delay-1s" />
+        <img src="./images/1111.jpg" alt="Developer" />
       </div>
       <div class="col-md-6">
-        <h2 class="display-4">About Me</h2>
-        <p class="lead">
+        <h2>About Me</h2>
+        <p>
           I am a creative Front-End Developer who loves to craft amazing user
           experiences. I am building everything from static websites to
           dynamic, user-friendly applications.
@@ -149,161 +150,147 @@
 
   <!-- Projects Section -->
   <section id="projects">
-    <div class="container text-center">
-      <h2 class="display-4 animate__animated animate__fadeIn">My Projects</h2>
-      <div class="row">
-        <!-- Project 1 -->
-        <div class="col-md-4 my-3"   data-aos="fade-right"
-     data-aos-offset="300"
-     data-aos-easing="ease-in-sine">
-          <div class="card shadow animate__animated animate__fadeIn animate__delay-1s">
-            <img src="./images/Calculator.jpg" class="card-img-top" alt="Project 1" />
-            <div class="card-body">
-              <h5 class="card-title">Project One</h5>
-              <p class="card-text">
+    <h2>My Projects</h2>
+    <div class="projects-container">
+      <!-- Project 1 -->
+      <div class="card">
+        <a href="https://ihit-developer.github.io/CALCULATOR_USING_html_css_javascript/" target="_blank">
+          <div class="card-info">
+            <img src="./images/Calculator.jpg" alt="Calculator Project" />
+            <div class="card-content">
+              <h5 class="title">Project One</h5>
+              <p class="card-description">
                 A simple Calculator using HTML, CSS, and JS. This calculator
                 can perform basic operations like addition,
-                subtraction,multiplication, and division.
+                subtraction, multiplication, and division.
               </p>
-              <a href="https://ihit-developer.github.io/CALCULATOR_USING_html_css_javascript/"
-                class="btn btn-primary">View Project</a>
+              <span class="view-btn">VIEW PROJECT</span>
             </div>
           </div>
-        </div>
-        <!-- Project 2 -->
-        <div class="col-md-4 my-3"  data-aos="fade-left"
-     data-aos-anchor="#example-anchor"
-     data-aos-offset="500"
-     data-aos-duration="500">
-          <div class="card shadow animate__animated animate__fadeIn animate__delay-1s">
-            <img src="./images/data analysis.jpg" class="card-img-top" alt="Project 2" />
-            <div class="card-body">
-              <h5 class="card-title">Project Two</h5>
-              <p class="card-text">
+        </a>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="card">
+        <a href="https://ihit-developer.github.io/LANDING_PAGE/" target="_blank">
+          <div class="card-info">
+            <img src="./images/data analysis.jpg" alt="Data Analysis Project" />
+            <div class="card-content">
+              <h5 class="title">Project Two</h5>
+              <p class="card-description">
                 Data analysis website showcasing insights and analytics.
               </p>
-              <a href="https://ihit-developer.github.io/LANDING_PAGE/" class="btn btn-primary">View Project</a>
+              <span class="view-btn">VIEW PROJECT</span>
             </div>
           </div>
-        </div>
-        <!-- Project 3 -->
-        <div class="col-md-4 my-3" data-aos="fade-zoom-in"
-     data-aos-easing="ease-in-back"
-     data-aos-delay="300"
-     data-aos-offset="0">
-          <div class="card shadow animate__animated animate__fadeIn animate__delay-1s">
-            <img src="./images/form.jpg" class="card-img-top" alt="Project 3" />
-            <div class="card-body">
-              <h5 class="card-title">Project Three</h5>
-              <p class="card-text">
+        </a>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="card">
+        <a href="https://ihit-developer.github.io/Glassmorphism_form/" target="_blank">
+          <div class="card-info">
+            <img src="./images/form.jpg" alt="Form Project" />
+            <div class="card-content">
+              <h5 class="title">Project Three</h5>
+              <p class="card-description">
                 A simple glassmorphism login form design.
               </p>
-              <a href="https://ihit-developer.github.io/Glassmorphism_form/" class="btn btn-primary">View Project</a>
+              <span class="view-btn">VIEW PROJECT</span>
             </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
 
-<!-- Skills Section -->
-<section id="skills" class="container my-5">
-  <h2 class="text-center display-4 animate__animated animate__fadeIn mb-5 text-light">
-    My Skills
-  </h2>
-
-  <div class="row gy-4 gx-4"> <!-- Added gx-4 for horizontal gap -->
-    <!-- Web Development -->
-    <div class="col-lg-6 col-md-6 col-sm-12">
-      <div class="skill-box p-4">
-        <h5 class="d-flex justify-content-between align-items-center">
-          <span><i class="fas fa-laptop-code me-2 text-primary"></i> Web Development</span>
-          <span>80%</span>
-        </h5>
-        <div class="progress">
-          <div class="progress-bar bg-primary" style="width: 80%;"></div>
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>My Skills</h2>
+    <div class="row">
+      <!-- Web Development -->
+      <div class="col-lg-6">
+        <div class="skill-box">
+          <h5>
+            <i class="fas fa-laptop-code"></i> Web Development
+            <span style="float: right;">80%</span>
+          </h5>
+          <div class="progress">
+            <div class="progress-bar bg-primary" style="width: 80%;"></div>
+          </div>
+          <p style="color: #b8b8b8; margin-top: 10px;">HTML, CSS, JavaScript, React, Node.js</p>
         </div>
-        <p class="text-light mt-2 mb-0">HTML, CSS, JavaScript, React, Node.js</p>
+      </div>
+
+      <!-- UI/UX Design -->
+      <div class="col-lg-6">
+        <div class="skill-box">
+          <h5>
+            <i class="fas fa-paint-brush"></i> UI/UX Design
+            <span style="float: right;">60%</span>
+          </h5>
+          <div class="progress">
+            <div class="progress-bar bg-info" style="width: 60%;"></div>
+          </div>
+          <p style="color: #b8b8b8; margin-top: 10px;">Figma, Sketch, Adobe XD</p>
+        </div>
+      </div>
+
+      <!-- Database -->
+      <div class="col-lg-6">
+        <div class="skill-box">
+          <h5>
+            <i class="fas fa-database"></i> Database
+            <span style="float: right;">75%</span>
+          </h5>
+          <div class="progress">
+            <div class="progress-bar bg-success" style="width: 75%;"></div>
+          </div>
+          <p style="color: #b8b8b8; margin-top: 10px;">MySQL, MongoDB</p>
+        </div>
+      </div>
+
+      <!-- Cloud Services -->
+      <div class="col-lg-6">
+        <div class="skill-box">
+          <h5>
+            <i class="fas fa-cloud"></i> Cloud Services
+            <span style="float: right;">55%</span>
+          </h5>
+          <div class="progress">
+            <div class="progress-bar bg-warning" style="width: 55%;"></div>
+          </div>
+          <p style="color: #b8b8b8; margin-top: 10px;">AWS, Firebase</p>
+        </div>
       </div>
     </div>
-
-    <!-- UI/UX Design -->
-    <div class="col-lg-6 col-md-6 col-sm-12">
-      <div class="skill-box p-4">
-        <h5 class="d-flex justify-content-between align-items-center">
-          <span><i class="fas fa-paint-brush me-2 text-info"></i> UI/UX Design</span>
-          <span>60%</span>
-        </h5>
-        <div class="progress">
-          <div class="progress-bar bg-info" style="width: 60%;"></div>
-        </div>
-        <p class="text-light mt-2 mb-0">Figma, Sketch, Adobe XD</p>
-      </div>
-    </div>
-
-    <!-- Database -->
-    <div class="col-lg-6 col-md-6 col-sm-12">
-      <div class="skill-box p-4">
-        <h5 class="d-flex justify-content-between align-items-center">
-          <span><i class="fas fa-database me-2 text-success"></i> Database</span>
-          <span>75%</span>
-        </h5>
-        <div class="progress">
-          <div class="progress-bar bg-success" style="width: 75%;"></div>
-        </div>
-        <p class="text-light mt-2 mb-0">MySQL, MongoDB</p>
-      </div>
-    </div>
-
-    <!-- Cloud Services -->
-    <div class="col-lg-6 col-md-6 col-sm-12">
-      <div class="skill-box p-4">
-        <h5 class="d-flex justify-content-between align-items-center">
-          <span><i class="fas fa-cloud me-2 text-warning"></i> Cloud Services</span>
-          <span>55%</span>
-        </h5>
-        <div class="progress">
-          <div class="progress-bar bg-warning" style="width: 55%;"></div>
-        </div>
-        <p class="text-light mt-2 mb-0">AWS, Firebase</p>
-      </div>
-    </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- Contact Section -->
   <section id="contact">
-    <div class="container">
-      <h2 class="display-4 text-center animate__animated animate__fadeIn">
-        Contact Me
-      </h2>
-      <form action="https://api.web3forms.com/submit" method="POST"
-        class="animate__animated animate__fadeIn animate__delay-1s">
-        <input type="hidden" name="access_key" value="093cb03b-b08d-4173-bd24-18419bbeda82" />
-
-        <div class="form-group">
-          <input type="text" class="form-control" name="name" placeholder="Your Name" required />
-        </div>
-        <div class="form-group">
-          <input type="email" class="form-control" name="email" placeholder="Your Email" required />
-        </div>
-        <div class="form-group">
-          <textarea class="form-control" name="message" placeholder="Your Message" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary btn-lg">
-          Send Message
-        </button>
-      </form>
-    </div>
+    <h2>Contact Me</h2>
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="093cb03b-b08d-4173-bd24-18419bbeda82" />
+      
+      <div class="form-group">
+        <input type="text" class="form-control" name="name" placeholder="Your Name" required />
+      </div>
+      <div class="form-group">
+        <input type="email" class="form-control" name="email" placeholder="Your Email" required />
+      </div>
+      <div class="form-group">
+        <textarea class="form-control" name="message" placeholder="Your Message" required></textarea>
+      </div>
+      <button type="submit" class="btn-primary">Send Message</button>
+    </form>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-3">
+  <footer>
     <p>
       &copy; 2024 M.IHTI |
-      <a href="www.linkedin.com/in/ihtisham-khan-393829338" class="text-white">LinkedIn</a> |
-      <a href=" https://github.com/ihit-developer" class="text-white">GitHub</a>
+      <a href="https://www.linkedin.com/in/ihtisham-khan-393829338">LinkedIn</a> |
+      <a href="https://github.com/ihit-developer">GitHub</a>
     </p>
   </footer>
 
