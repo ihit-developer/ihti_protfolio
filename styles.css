@@ -12,11 +12,16 @@ body {
   overflow-x: hidden;
 }
 
-/* Beautiful Loader */
+/* Modern Loader */
 #loader {
   position: fixed;
   inset: 0;
-  background: linear-gradient(135deg, #22c55e 0%, #15803d 50%, #86efac 100%);
+  background: radial-gradient(
+    circle at 50% 40%,
+    #0d2b1a 0%,
+    #061510 55%,
+    #030a07 100%
+  );
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,91 +34,165 @@ body {
   text-align: center;
 }
 
-.spinner-container {
+.loader-badge {
   position: relative;
-  width: 150px;
-  height: 150px;
-  margin: 0 auto 30px;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.spinner-ring {
+.loader-ring-svg {
   position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  border: 4px solid transparent;
+  transform: rotate(-90deg);
+}
+
+.loader-ring-track {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.08);
+  stroke-width: 5;
+}
+
+.loader-ring-progress {
+  fill: none;
+  stroke: url(#loaderGradient);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-dasharray: 339.29;
+  stroke-dashoffset: 339.29;
+  filter: drop-shadow(0 0 8px rgba(34, 197, 94, 0.9));
+  transition: stroke-dashoffset 0.15s ease;
+}
+
+.loader-mark {
+  position: relative;
+  width: 92px;
+  height: 92px;
   border-radius: 50%;
-  animation: spin 2s linear infinite;
+  background: linear-gradient(
+    145deg,
+    rgba(34, 197, 94, 0.18),
+    rgba(21, 128, 61, 0.08)
+  );
+  border: 1px solid rgba(134, 239, 172, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #f0fdf4;
+  animation: badgePulse 2.4s ease-in-out infinite;
 }
 
-.spinner-ring:nth-child(1) {
-  border-top-color: #fff;
-  animation-delay: 0s;
+.loader-mark span:last-child {
+  color: #86efac;
+  margin-left: 1px;
 }
 
-.spinner-ring:nth-child(2) {
-  border-right-color: #fff;
-  animation-delay: 0.2s;
-  animation-duration: 1.5s;
-}
-
-.spinner-ring:nth-child(3) {
-  border-bottom-color: #fff;
-  animation-delay: 0.4s;
-  animation-duration: 1.8s;
-}
-
-.spinner-ring:nth-child(4) {
-  border-left-color: #fff;
-  animation-delay: 0.6s;
-  animation-duration: 2.2s;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
+@keyframes badgePulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 14px rgba(34, 197, 94, 0);
   }
 }
 
 .loading-text {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  color: white;
-  margin-bottom: 15px;
+  color: #f0fdf4;
+  margin-bottom: 10px;
   letter-spacing: 3px;
-  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.loading-subtitle {
+  font-size: 0.9rem;
+  color: #86efac;
+  letter-spacing: 1px;
+  margin-bottom: 22px;
+  opacity: 0.85;
+}
+
+.loading-dots span {
+  display: inline-block;
+  animation: dotFade 1.4s ease-in-out infinite;
+  opacity: 0.2;
+}
+
+.loading-dots span:nth-child(1) {
+  animation-delay: 0s;
+}
+.loading-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.loading-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes dotFade {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  40% {
+    opacity: 1;
+  }
 }
 
 .loading-percentage {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: white;
-  margin-top: 20px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #f0fdf4;
+  margin-top: 16px;
+  letter-spacing: 1px;
+  font-variant-numeric: tabular-nums;
 }
 
 .loading-bar {
-  width: 250px;
+  position: relative;
+  width: 220px;
   height: 4px;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(34, 197, 94, 0.12);
   border-radius: 10px;
-  margin: 20px auto;
+  margin: 0 auto;
   overflow: hidden;
 }
 
 .loading-progress {
+  position: relative;
   height: 100%;
-  background: white;
+  background: linear-gradient(90deg, #86efac, #22c55e, #15803d);
   width: 0%;
-  transition: width 0.1s ease;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  transition: width 0.15s ease;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-@keyframes pulse {
-  0%,
+.loading-progress::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  transform: translateX(-100%);
+  animation: loaderShimmer 1.2s ease-in-out infinite;
+}
+
+@keyframes loaderShimmer {
   100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.6;
+    transform: translateX(100%);
   }
 }
 

@@ -1,26 +1,36 @@
-// FIXED: Beautiful Loader with proper completion
-let loadingProgress = 0;
-const loadingInterval = setInterval(() => {
-  loadingProgress += 2; // Consistent increment
-  if (loadingProgress >= 100) {
-    loadingProgress = 100;
-    clearInterval(loadingInterval);
-    document.getElementById("loadingProgress").style.width = "100%";
-    document.getElementById("loadingPercentage").textContent = "100%";
+// Modern circular loader with real progress ring
+(function () {
+  const loaderEl = document.getElementById("loader");
+  const progressBarEl = document.getElementById("loadingProgress");
+  const percentageEl = document.getElementById("loadingPercentage");
+  const ringEl = document.getElementById("loaderRingProgress");
+  const RING_CIRCUMFERENCE = 339.29; // 2 * PI * r(54)
 
-    setTimeout(() => {
-      document.getElementById("loader").style.opacity = "0";
+  let loadingProgress = 0;
+  const loadingInterval = setInterval(() => {
+    loadingProgress += 2;
+
+    if (loadingProgress >= 100) {
+      loadingProgress = 100;
+      clearInterval(loadingInterval);
+      progressBarEl.style.width = "100%";
+      percentageEl.textContent = "100%";
+      ringEl.style.strokeDashoffset = "0";
+
       setTimeout(() => {
-        document.getElementById("loader").style.display = "none";
-      }, 500);
-    }, 300);
-  } else {
-    document.getElementById("loadingProgress").style.width =
-      loadingProgress + "%";
-    document.getElementById("loadingPercentage").textContent =
-      Math.floor(loadingProgress) + "%";
-  }
-}, 50);
+        loaderEl.style.opacity = "0";
+        setTimeout(() => {
+          loaderEl.style.display = "none";
+        }, 500);
+      }, 300);
+    } else {
+      progressBarEl.style.width = loadingProgress + "%";
+      percentageEl.textContent = Math.floor(loadingProgress) + "%";
+      ringEl.style.strokeDashoffset =
+        RING_CIRCUMFERENCE * (1 - loadingProgress / 100);
+    }
+  }, 50);
+})();
 
 // Page Scroll Progress + Navbar scroll state (consolidated, rAF-throttled for smooth scrolling)
 const navbarEl = document.querySelector(".navbar");
@@ -309,7 +319,7 @@ document
   .forEach((el) => {
     el.style.opacity = "0";
     el.style.transform = "translateY(50px)";
-    el.style.transition = "all 0.6s ease";
+    el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
     observeElements.observe(el);
   });
 
